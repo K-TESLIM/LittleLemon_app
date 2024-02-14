@@ -18,37 +18,48 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.littlelemon.ui.theme.LittleLemonTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Column(Modifier.fillMaxSize(),
-                 verticalArrangement = Arrangement.Top,
-                horizontalAlignment = Alignment.Start) {
-                Text(
-                    text = "Little Lemon", fontSize = 32.sp
-                    , color = Color(0xFFF4CE14)
-                )
-                Text(
-                    text = stringResource(id = R.string.chicago), fontSize = 32.sp
-                    , color = Color(0xFFF4CE14)
-                )
-                Row() {
-                    Button(
-                        onClick = { /*TODO*/ },
-                        border = BorderStroke(1.dp, Color.Red),
-                        shape = RoundedCornerShape(10.dp),
-                        colors = ButtonDefaults
-                            .buttonColors(containerColor = Color.Gray)
-                    ) {
-                        Text(text = stringResource(id = R.string.order))
-                    }
+            LittleLemonTheme {
+                MainComponent()
+            }
+        }
+    }
+}
 
-                }
+
+@androidx.compose.runtime.Composable
+fun MainComponent() {
+
+
+    Column(
+        Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Top,
+        horizontalAlignment = Alignment.Start
+    ) {
+        Text(
+            text = "Little Lemon", fontSize = 32.sp, color = Color(0xFFF4CE14)
+        )
+        Text(
+            text = stringResource(id = R.string.chicago),
+            fontSize = 32.sp,
+            color = Color(0xFFF4CE14)
+        )
+        Row() {
+            Button(
+                onClick = { /*TODO*/ },
+                border = BorderStroke(1.dp, Color.Red),
+                shape = RoundedCornerShape(10.dp),
+                colors = ButtonDefaults
+                    .buttonColors(containerColor = Color.Gray)
+            ) {
+                Text(text = stringResource(id = R.string.order))
             }
 
         }
     }
 }
-
