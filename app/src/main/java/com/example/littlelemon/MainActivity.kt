@@ -24,8 +24,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             Column(Modifier.fillMaxSize(),
-                 verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally) {
+                 verticalArrangement = Arrangement.Top,
+                horizontalAlignment = Alignment.Start) {
                 Text(
                     text = "Little Lemon", fontSize = 32.sp
                     , color = Color(0xFFF4CE14)
