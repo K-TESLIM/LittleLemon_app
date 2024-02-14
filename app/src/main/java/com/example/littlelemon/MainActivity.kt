@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -48,12 +49,15 @@ fun MainComponent() {
         horizontalAlignment = Alignment.Start
     ) {
         Text(
-            text = "Little Lemon", fontSize = 32.sp, color = Color(0xFFF4CE14)
+            text = "Little Lemon", fontSize = 32.sp,
+            color = Color(0xFFF4CE14),
+            modifier = Modifier.padding(start = 20.dp)
         )
         Text(
             text = stringResource(id = R.string.chicago),
             fontSize = 24.sp,
-            color = Color(0xFFFFFFFF)
+            color = Color(0xFFFFFFFF),
+            modifier = Modifier.padding(start = 20.dp)
         )
         Row(Modifier.fillMaxSize(),horizontalArrangement = Arrangement.Center) {
             Button(
