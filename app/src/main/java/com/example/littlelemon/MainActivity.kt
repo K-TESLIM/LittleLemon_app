@@ -3,13 +3,13 @@ package com.example.littlelemon
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -51,7 +51,7 @@ fun MainComponent() {
         Text(
             text = "Little Lemon", fontSize = 32.sp,
             color = Color(0xFFF4CE14),
-            modifier = Modifier.padding(start = 20.dp)
+            modifier = Modifier.padding(start = 20.dp, top = 20.dp)
         )
         Text(
             text = stringResource(id = R.string.chicago),
@@ -59,18 +59,25 @@ fun MainComponent() {
             color = Color(0xFFFFFFFF),
             modifier = Modifier.padding(start = 20.dp)
         )
-        Row(Modifier.fillMaxSize(),horizontalArrangement = Arrangement.Center) {
-            Button(
-                onClick = { /*TODO*/ },
-                border = BorderStroke(1.dp, Color.Red),
-                shape = RoundedCornerShape(10.dp),
-                colors = ButtonDefaults
-                    .buttonColors(containerColor = Color.Gray)
-            ) {
-                Text(text = stringResource(id = R.string.order))
-            }
-            Image(painter = painterResource(id = R.drawable.restaurantfoodb),
-                contentDescription = "", Modifier.height(100.dp))
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .padding(20.dp), horizontalArrangement = Arrangement.Center) {
+
+            Image(
+                painter = painterResource(id = R.drawable.restaurantfoodb),
+                contentDescription = "",
+                Modifier.height(100.dp)
+            )
+        }
+        Button(
+            onClick = { /*TODO*/ },
+            shape = RoundedCornerShape(10.dp),
+            modifier = Modifier.padding(horizontal = 20.dp),
+            colors = ButtonDefaults
+                .buttonColors(containerColor = Color(0XFFF4CE14))
+        ) {
+            Text(text = stringResource(R.string.order), color = Color.Black)
         }
     }
 }
